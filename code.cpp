@@ -56,7 +56,9 @@ static void update(int l, int r, int rt, int qL, int qR, int val) {
 }
 
 int main(void) {
-    scanf("%d %d %d", &X, &K, &P);
+    int ret;
+    ret = scanf("%d %d %d", &X, &K, &P);
+    if (ret == EOF) return 0;
 
     if (X > 1) {
         build(1, X - 1, 1);
@@ -64,7 +66,8 @@ int main(void) {
 
     while (P--) {
         int u, v, n;
-        scanf("%d %d %d", &u, &v, &n);
+        ret = scanf("%d %d %d", &u, &v, &n);
+        if (ret == EOF) break;
 
         if (u >= v) {
             putchar('N');
